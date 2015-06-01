@@ -10,12 +10,16 @@ class EmberComponent {
     console.log('trigger', arguments);
   }
 
+  destroy() {
+
+  }
+
   static proto() {
-  	return this.prototype;
+    return this.prototype;
   }
 
   static create() {
-  	return new this(...arguments);
+    return new this(...arguments);
   }
 }
 
