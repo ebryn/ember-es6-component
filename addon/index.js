@@ -1,4 +1,10 @@
+var uuid = 1;
+
 class EmberComponent {
+  constructor() {
+    this.elementId = 'e6-components-' + (uuid++);
+  }
+
   trigger() {
     console.log('trigger', arguments);
   }
