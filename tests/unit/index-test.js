@@ -9,6 +9,12 @@ test('can be created with .create', function(assert) {
   assert.ok(component);
 });
 
+test('sets isComponent on instances', function(assert) {
+  let component = Component.create();
+
+  assert.ok(component.isComponent);
+});
+
 test('sets elementId', function(assert) {
   let component = Component.create();
 
