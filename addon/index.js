@@ -3,6 +3,7 @@ var uuid = 1;
 class EmberComponent {
   constructor() {
     this.elementId = 'es6-components-' + (uuid++);
+    this._state = 'preRender';
     this.isComponent = true;
   }
 
@@ -10,12 +11,20 @@ class EmberComponent {
     console.log('trigger', arguments);
   }
 
+  _transitionTo(newState) {
+    this._state = newState;
+  }
+
+  destroy() {
+
+  }
+
   static proto() {
-  	return this.prototype;
+    return this.prototype;
   }
 
   static create() {
-  	return new this(...arguments);
+    return new this(...arguments);
   }
 }
 

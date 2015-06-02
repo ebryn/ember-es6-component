@@ -27,3 +27,19 @@ test('sets a unique elementId', function(assert) {
 
   assert.notEqual(component1.elementId, component2.elementId);
 });
+
+test('starts in preRender state', function(assert) {
+  let component = Component.create();
+
+  assert.equal(component._state, 'preRender');
+});
+
+test('_transitionTo updates current state', function(assert) {
+  let component = Component.create();
+
+  assert.equal(component._state, 'preRender', 'precond');
+
+  component._transitionTo('foo');
+
+  assert.equal(component._state, 'foo');
+});
