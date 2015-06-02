@@ -3,11 +3,16 @@ var uuid = 1;
 class EmberComponent {
   constructor() {
     this.elementId = 'es6-components-' + (uuid++);
+    this._state = 'preRender';
     this.isComponent = true;
   }
 
   trigger() {
     console.log('trigger', arguments);
+  }
+
+  _transitionTo(newState) {
+    this._state = newState;
   }
 
   destroy() {
